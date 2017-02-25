@@ -1,0 +1,41 @@
+body{
+	padding: 20px;
+	font-family: "微软雅黑";
+}
+.warp,.left,.middle,.right{
+	padding: 20px;
+	border: 1px solid #999;
+}
+.warp{
+	margin: 0 auto;
+	background: #eee;
+	overflow: auto;
+}
+.left{
+	float: left;
+	width: 160px;
+	background: #fff;
+}
+.left p{
+	display: block;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+.right{
+	width: 80px;
+	float: right;
+	background: #fff;
+}
+.right .bottom{
+	margin-bottom: 16px;
+}
+.middle{
+	margin-left: 220px;
+	margin-right: 140px;
+	background: #fff;
+}
+img{
+	height: 80px;
+	width: 80px;
+}
