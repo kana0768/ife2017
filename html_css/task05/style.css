@@ -5,6 +5,7 @@
 body{
 	background: #dedede;
 	font-family:'Microsoft YaHei';
+	min-width: 700px;
 }
 /*头部*/
 header{
