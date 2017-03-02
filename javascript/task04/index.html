@@ -40,7 +40,9 @@
         btn[0].onclick = function(){
             var li = document.createElement("li");
             li.innerHTML = text.value;
-            if(!isNaN(text.value)){
+            if(text.value == ""){
+                alert("不能为空！");
+            }else if(!isNaN(text.value)){
                 list.insertBefore(li,list.firstChild);
                 text.value = null;
             }else{
@@ -50,7 +52,9 @@
         btn[1].onclick = function(){
             var li = document.createElement("li");
             li.innerHTML = text.value;
-            if(!isNaN(text.value)){
+            if(text.value == ""){
+                alert("不能为空！");
+            }else if(!isNaN(text.value)){
                 list.appendChild(li,list.lastChild);
                 text.value = null;
             }else{
