@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul{
+            padding-left: 0;
+        }
+        li{
+            list-style-type: none;
+            float: left;
+            width: auto;
+            height: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            margin: 0 10px 0 0;
+            padding: 0 10px;
+            background: red;
+            color: white;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" class="btn" value="左侧入">
+    <input type="button" class="btn" value="右侧入">
+    <input type="button" class="btn" value="左侧出">
+    <input type="button" class="btn" value="右侧出">
+    <br>
+    <ul id="list">
+            
+    </ul>
+    <script>
+        var text = document.getElementById("text");
+        var btn = document.getElementsByClassName("btn");
+        var list = document.getElementById("list");
+        btn[0].onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML = text.value;
+            if(!isNaN(text.value)){
+                list.insertBefore(li,list.firstChild);
+                text.value = null;
+            }else{
+                alert("输入错误");
+            }
+        }
+        btn[1].onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML = text.value;
+            if(!isNaN(text.value)){
+                list.appendChild(li,list.lastChild);
+                text.value = null;
+            }else{
+                alert("输入错误");
+            }
+            
+        }
+        btn[2].onclick = function(){
+            if(list.hasChildNodes()){
+                alert(list.firstChild.innerText);
+                list.removeChild(list.firstChild);
+            }else{
+                alert("null");
+            }
+        }
+        btn[3].onclick = function(){
+            if(list.hasChildNodes()){
+                alert(list.firstChild.innerText);
+                list.removeChild(list.lastChild);
+            }else{
+                alert("null");
+            }
+        }
+        list.onmouseover = function(){
+            var li = list.getElementsByTagName("li");
+            for(var i in li){
+                li[i].index = i;
+                li[i].onclick = function(){
+                    list.removeChild(list.childNodes[this.index]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
